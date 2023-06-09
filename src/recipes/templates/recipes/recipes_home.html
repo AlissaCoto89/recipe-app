@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
-   <title>
-       Recipes
-   </title>
-   <body>
-       Welcome to Recipe App!
-   </body>
+<html lang="en">
+
+<head>
+    <title>Sweets&Treats</title>
+    <meta name="viewport" content="'width=device-width, initial-scale=1" />
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'recipes/images/cupcake-favicon.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}" />
+    <style type="text/css">
+        body {
+            background: url("{% static 'recipes/images/cookbook3.jpg' %}") no-repeat fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30vh;
+        }
+
+        img {
+            border-radius: 15px;
+            margin-top: -40px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="{% static 'recipes/images/welcome.png' %}" />
+</body>
+
 </html>

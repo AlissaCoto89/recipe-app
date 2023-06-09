@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Desserts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'recipes/images/cupcake-favicon.png' %}">
+    <link rel='stylesheet' type='text/css' href="{% static 'recipes/css/styles.css' %}">
+    <style type="text/css">
+        body {
+            background: url("{% static 'recipes/images/cookbook3.jpg' %}") no-repeat fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header class="page-header">
+            <img id="logo" src="{% static 'recipes/images/logo.png' %}" height="400px" width="450px" />
+        </header>
+    </div>
+    <div class="recipe_grid">
+        {% for object in object_list %}
+        <div class="grid_item">
+            <h4><a class="recipe_name" href="{{object.get_absolute_url}}"> {{object.name}} </a></h4>
+            <img class="food_image_grid" src="{{object.pic.url}}" />
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'recipes/images/cupcake-favicon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+    <style type="text/css">
+        body {
+            background: url("{% static 'recipes/images/cookbook3.jpg' %}") no-repeat fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="details_modal">
+        <h2>{{object.name}}</h2>
+        <img class="food_image" src="{{object.pic.url}}" />
+        <div class="details_body">
+            <div class="details_short">
+                <b>Name: </b> {{object.name}} <br>
+                <b>Cooking Time: </b> {{object.cooking_time}} <br>
+                <b>Difficulty: </b> {{object.difficulty}} <br>
+                <b>Ingredients: </b> {{object.ingredients}} <br><br>
+            </div>
+            <div class="details_long">
+                <button onclick="goBack()" class="login_btn">Back</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
