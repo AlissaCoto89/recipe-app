@@ -5,4 +5,4 @@
 *.sqlite3
 
 #Formatting
-.vscode
+*.vscode
