@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>Sweets&Treats | Details</title>
+    <title>Sweets&Treats | Recipes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="{% static 'recipes/images/cupcake-favicon.png' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}" />
@@ -32,26 +32,23 @@
     <div class="nav-bar">
         <a href="{%url 'logout' %}" class="logout_btn"> Logout</a>
     </div>
-    <div class="details_modal">
-        <h2>{{object.name}}</h2>
-        <img class="food_image" src="{{object.pic.url}}" />
-        <div class="details_body">
-            <div class="details_short">
-                <b>Name: </b> {{object.name}} <br />
-                <b>Cooking Time: </b> {{object.cooking_time}} <br />
-                <b>Difficulty: </b> {{object.difficulty}} <br />
-                <b>Ingredients: </b> {{object.ingredients}} <br /><br />
-            </div>
-            <div class="details_long">
-                <button onclick="goBack()" class="login_btn">Back</button>
-            </div>
-        </div>
+    <div>
+        <header class="page-header">
+            <img id="logo" src="{% static 'recipes/images/logo.png' %}" height="400px" width="450px" />
+        </header>
     </div>
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
+    <div class="recipe_grid">
+        {% for object in object_list %}
+        <div class="grid_item">
+            <h4>
+                <a class="recipe_name" href="{{object.get_absolute_url}}">
+                    {{object.name}}
+                </a>
+            </h4>
+            <img class="food_image_grid" src="{{object.pic.url}}" />
+        </div>
+        {% endfor %}
+    </div>
 </body>
 
 </html>

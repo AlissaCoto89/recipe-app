@@ -1,10 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Sweets&Treats</title>
+    <title>Sweets&Treats | Welcome</title>
     <meta name="viewport" content="'width=device-width, initial-scale=1" />
-    {% load static %}
     <link rel="shortcut icon" href="{% static 'recipes/images/cupcake-favicon.png' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}" />
     <style type="text/css">
@@ -14,18 +15,41 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 30vh;
         }
 
         img {
             border-radius: 15px;
-            margin-top: -40px;
+            margin-top: 140px;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .login_btn {
+            margin-right: 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            color: #000;
+            margin-top: 20px;
+            margin-bottom: 80px;
+            height: 25px;
         }
     </style>
 </head>
 
 <body>
-    <img src="{% static 'recipes/images/welcome.png' %}" />
+    <div class="nav-bar">
+        <img class="navbar_img" href="{% static 'recipes/images/cupcake-favicon.png' %}">
+        <a href="{%url 'login' %}" class="login_btn"> Login</a>
+    </div>
+    <div>
+        <header class="page-header">
+            <img src="{% static 'recipes/images/welcome.png' %}" />
+        </header>
+    </div>
+
 </body>
 
 </html>

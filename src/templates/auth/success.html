@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sweets&Treats | Logout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="{% static 'recipes/images/cupcake-favicon.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}" />
+    <style type="text/css">
+        body {
+            background: url("{% static 'recipes/images/cookbook3.jpg' %}") no-repeat fixed;
+            background-size: cover;
+        }
+
+        a {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth_modal" style="width: 35%">
+        <h2 style="
+          border: 2px solid #f7b4a7;
+          padding: 10px;
+          background-color: rgb(255, 255, 255, 0.5);
+          color: #000;
+        ">
+            You Have Successfully Logged Out!
+        </h2>
+        <br />
+        <a class="login_btn" href="{%url 'login' %}"> Login </a>
+    </div>
+</body>
+
+</html>
