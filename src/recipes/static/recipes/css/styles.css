@@ -118,7 +118,7 @@
     right: 25px;
     height: 40px;
     margin-top: 80px;
-
+    cursor: pointer;
 }
 
 .login_btn:hover {
@@ -136,6 +136,7 @@
     margin-top: 23vh;
     font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
     font-variant: small-caps;
+    cursor: pointer;
 }
 
 #error_login {
@@ -181,5 +182,21 @@
     right: 25px;
     height: 25px;
     margin-top: 15px;
+}
 
+.form_search_input,
+.form_search {
+    background-color: beige;
+    height: 14px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-variant: small-caps;
+    width: 200px;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.form_data {
+    color: white;
 }

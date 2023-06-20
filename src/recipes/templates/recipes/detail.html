@@ -30,6 +30,7 @@
 
 <body>
     <div class="nav-bar">
+        <a href="{%url 'recipes:search' %}" class="logout_btn"> Search</a> 
         <a href="{%url 'logout' %}" class="logout_btn"> Logout</a>
     </div>
     <div class="details_modal">
@@ -39,7 +40,7 @@
             <div class="details_short">
                 <b>Name: </b> {{object.name}} <br />
                 <b>Cooking Time: </b> {{object.cooking_time}} <br />
-                <b>Difficulty: </b> {{object.difficulty}} <br />
+                <b>Difficulty: </b> {{object.calculate_difficulty}} <br />
                 <b>Ingredients: </b> {{object.ingredients}} <br /><br />
             </div>
             <div class="details_long">
