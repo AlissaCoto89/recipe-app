@@ -41,8 +41,8 @@
 
 <body>
     <div class="nav-bar">
-        <img class="navbar_img" href="{% static 'recipes/images/cupcake-favicon.png' %}">
-        <a href="{%url 'login' %}" class="login_btn"> Login</a>
+        <img class="navbar_img" src="{% static 'recipes/images/cupcake-favicon.png' %}" alt="Favicon">
+        <a href="{% url 'login' %}" class="login_btn"> Login</a>
     </div>
     <div>
         <header class="page-header">
