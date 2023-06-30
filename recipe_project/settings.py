@@ -49,10 +49,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AWS_ACCESS_KEY_ID = 'AKIAT237C6LUGYJZMF4U'
-AWS_SECRET_ACCESS_KEY = 'e6EdUG4ZmEzdX2r9zTX90+hlhIzc1bJ/WX7GX+tv'
-AWS_STORAGE_BUCKET_NAME = 'recipebucketakc'
-AWS_S3_REGION_NAME = 'us-east-1'  # e.g., 'us-west-1'
+#AWS_ACCESS_KEY_ID = 'your-access-key-id'
+#AWS_SECRET_ACCESS_KEY = 'your-secret-access-key'
+#AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
+#AWS_S3_REGION_NAME = 'your-s3-region-name'  # e.g., 'us-west-1'
 
 ROOT_URLCONF = 'recipe_project.urls'
 
@@ -121,13 +121,11 @@ STATICFILES_DIRS = [
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = BASE_DIR / 'media' 
-
 
 
 
 # Media files
-MEDIA_URL = f'https://recipebucketakc.s3.amazonaws.com/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
@@ -149,7 +147,8 @@ DATABASES['default'].update(db_from_env)
 
 STORAGES = {
     'default': {
-        'BACKEND': 'storages.backends.s3boto3.S3Boto3Storage'
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+        'LOCATION': '/media/', 
     },
     'staticfiles': {
         'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
