@@ -113,10 +113,17 @@ STATICFILES_DIRS = [
 ]
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media' 
+
+
+
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
@@ -145,4 +152,4 @@ STORAGES = {
     },
 }
 
-WHITENOISE_ROOT = os.path.join(BASE_DIR, "media")
+# WHITENOISE_ROOT = os.path.join(BASE_DIR, "media")
