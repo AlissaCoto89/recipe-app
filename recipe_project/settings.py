@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from django.core.files.storage import FileSystemStorage
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,7 +36,7 @@ INSTALLED_APPS = [
     # recipe project related apps,
     'recipes',
     'users',
-    'storages',
+
 ]
 
 MIDDLEWARE = [
@@ -48,11 +49,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-#AWS_ACCESS_KEY_ID = 'your-access-key-id'
-#AWS_SECRET_ACCESS_KEY = 'your-secret-access-key'
-#AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
-#AWS_S3_REGION_NAME = 'your-s3-region-name'  # e.g., 'us-west-1'
 
 ROOT_URLCONF = 'recipe_project.urls'
 
@@ -118,8 +114,12 @@ STATICFILES_DIRS = [
     BASE_DIR / 'recipes' / 'static'
 ]
 
+
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media' 
 
 
 
@@ -127,6 +127,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 
