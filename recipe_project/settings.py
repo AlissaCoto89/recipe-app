@@ -136,7 +136,11 @@ DATABASES['default'].update(db_from_env)
 # https://warehouse.python.org/project/whitenoise/
 
 STORAGES = {
-"staticfiles": {
-"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-},
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+        'LOCATION': '/media/', 
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
 }
