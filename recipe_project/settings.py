@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.core.files.storage.FileSystemStorage'
     # recipe project related apps,
     'recipes',
     'users',
