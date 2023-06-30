@@ -144,3 +144,5 @@ STORAGES = {
         'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
     },
 }
+
+WHITENOISE_ROOT = os.path.join(BASE_DIR, "media")
