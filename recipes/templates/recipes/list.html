@@ -117,7 +117,9 @@
                     {{object.name}}
                 </a>
             </h4>
+            {% if object.pic %}
             <img class="food_image_grid" src="{{object.pic.url}}" />
+        {% endif %}
         </div>
         {% endfor %}
     </div>
