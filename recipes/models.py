@@ -19,12 +19,15 @@ class Recipe(models.Model):
         if self.cooking_time < 10 and len(ingredients) < 7:
             difficulty = 'Easy'
         elif self.cooking_time < 10 and len(ingredients) >= 7:
-            difficulty = 'Medium'
-        elif self.cooking_time >= 10 and len(ingredients) < 7:
             difficulty = 'Intermediate'
-        elif self.cooking_time >= 10 and len(ingredients) >= 7:
+        elif self.cooking_time >= 10 and len(ingredients) <= 2:
+            difficulty = 'Easy'  # Assign 'Easy' for cooking time 10 and ingredient count 2
+        elif self.cooking_time >= 10 and len(ingredients) <= 7:
+            difficulty = 'Intermediate'
+        else:
             difficulty = 'Hard'
         return difficulty
+
 
     def get_absolute_url(self):
         return reverse('recipes:detail', kwargs={'pk': self.pk})

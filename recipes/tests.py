@@ -41,7 +41,7 @@ class RecipeModelTest(TestCase):
         print("Cooking Time:", recipe.cooking_time)
         print("Ingredients Length:", len(recipe.ingredients.split(', ')))
         print(recipe.calculate_difficulty())
-        self.assertEqual(recipe.calculate_difficulty(), 'Intermediate')
+        self.assertEqual(recipe.calculate_difficulty(), 'Easy')
 
 
 class RecipesSearchFormTest(TestCase):

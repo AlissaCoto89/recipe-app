@@ -8,9 +8,9 @@ CHART__CHOICES = (
 
 DIFFIC__CHOICES = (
     ('#1', 'Easy'),
-    ('#2', 'Medium'),
-    ('#3', 'Intermediate'),
-    ('#4', 'Hard')
+    ('#2', 'Intermediate'),
+    ('#3', 'Hard'),
+    
 )
 
 
