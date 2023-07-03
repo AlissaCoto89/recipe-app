@@ -25,12 +25,19 @@
             border-radius: 5px;
             color: #000;
         }
-    </style>
+
+        .details_long {
+            margin-top: -90px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        </style>
 </head>
 
 <body>
     <div class="nav-bar">
-        <a href="{%url 'recipes:search' %}" class="logout_btn"> Search</a> 
+        <a href="{%url 'recipes:search' %}" class="logout_btn"> Search</a>
         <a href="{%url 'logout' %}" class="logout_btn"> Logout</a>
     </div>
     <div class="details_modal">
@@ -43,9 +50,9 @@
                 <b>Difficulty: </b> {{object.calculate_difficulty}} <br />
                 <b>Ingredients: </b> {{object.ingredients}} <br /><br />
             </div>
-            <div class="details_long">
-                <button onclick="goBack()" class="login_btn">Back</button>
-            </div>
+        </div>
+        <div class="details_long">
+            <button onclick="goBack()" class="login_btn">Back</button>
         </div>
     </div>
     <script>
